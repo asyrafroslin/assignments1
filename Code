@@ -8,7 +8,7 @@ int frame = 0;
 void setup() {
   size (800, 400);
   cursor(HAND); // Cursor
-  print1n (mouseX + " : " + mouseY); // Mouse Data
+  println (mouseX + " : " + mouseY); // Mouse Data
   fill (0);
   
 }
@@ -28,10 +28,10 @@ void draw(){
   }
   
   float targetX = mouseX;
-  float d = targetX - x;
-  x =+dx * easing;
+  float dx = targetX - x;
+  x += dx * easing;
   
-  float targetY = mouseY;
+float targetY = mouseY;
   float dy = targetY - y;
   y += dy * easing;
   
@@ -40,16 +40,16 @@ void draw(){
   float ix = width - mouseX; // inverse of X
   float iy = height - mouseY; // inverse of Y
   
-  // Big ellipse
+  // Big rect
   fill(255, 150);
-  ellipse (x, height/2, y, y);
+  rect (x, height/2, y, y);
   fill(0, 159);
-  ellipse (ix, height/2, iy, iy);
+  rect (ix, height/2, iy, iy);
   
-  // Click mouse to reveal bigger ellipse
+  // Click mouse to reveal bigger rect
   if (mousePressed==true){
     fill(255);
-    ellipse(x, y, 80, 80);
+    rect(x, y, 100, 100);
   }
   
   else {
