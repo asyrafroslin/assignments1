@@ -18,12 +18,12 @@ void setup() {
 void draw(){
   background (51);
   if (mouseX < 400) {
-    fill (228,98,255);
+    fill (255,255,255);
     rect (0, 0, 400, 400); // Left rectangle
   }
   
   else {
-    fill (255,149,10);
+    fill (0,128,0);
     rect (400, 0, 800, 400); // Right rectangle
   }
   
@@ -41,7 +41,7 @@ float targetY = mouseY;
   float iy = height - mouseY; // inverse of Y
   
   // Big rect
-  fill(255, 150);
+  fill(139,0 , 139);
   rect (x, height/2, y, y);
   fill(0, 159);
   rect (ix, height/2, iy, iy);
@@ -58,16 +58,16 @@ float targetY = mouseY;
     noStroke();
   }
   
-  // Press A to reveal right square
+  // Press A to reveal left ellipse
   if ((keyPressed == true) && (key == 'a')) {
     fill(255,0,94);
-    rect(160,150,100,100);
+    ellipse(160,150,100,100);
   }
  
-  // Press S to reveal left square
+  // Press S to reveal right ellipse
   if ((keyPressed == true) && (key == 's')){
-    fill(255,0,94);
-    rect(160,150,100,100);
+    fill(75,0,130);
+    ellipse(660,150,100,100);
   }
   
   // Drawing T 
